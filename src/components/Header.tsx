@@ -3,6 +3,7 @@ import { CalendarDays, Menu, ShoppingCart, UtensilsCrossed, X } from 'lucide-rea
 import { useState } from 'react'
 import logo from '../assets/clogo.jpg'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function Header() {
   const [toggle, setToggle] = useState(false)
@@ -25,10 +26,20 @@ export function Header() {
       {toggle && (
         <nav className="flex items-center absolute right-0 opacity-7 rounded-md bg-zinc-800 m-4 px-2 py-3 gap-2 border shadow-light">
           <ul className="flex flex-col items-center gap-4 p-2">
+            <Link href="/">
             <li>Home</li>
+            </Link>
+         
+            <Link href="/menu"> 
             <li className='flex items-center gap-1'> <UtensilsCrossed />Cardápio</li>
+            </Link>
+           
+           
             <li  className='flex items-center gap-1'><CalendarDays /> Eventos</li>
+            <Link href="/cart">
             <li className='flex items-center gap-1'> <ShoppingCart /> Carrinho</li>
+            </Link>
+           
           </ul>
         </nav>
       )}
