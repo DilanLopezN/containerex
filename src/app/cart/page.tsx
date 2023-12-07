@@ -37,6 +37,14 @@ type Product = {
     <main className="flex flex-col">
    <div className="h-[800px]  mt-[82px]  flex flex-col items-center">
       <h1>SEU CARRINHO</h1>
+      <div className=" w-full flex items-center justify-between  pr-4 pl-4 mb-2 mt-4">
+        <button type="button" className="border p-2 rounded-lg">Finalizar pedido</button>
+
+        <div className="flex flex-col">
+          <span className="text-sm ">TOTAL</span>
+          <strong className="text-sm text-green-400">{total}</strong>
+        </div>
+      </div>
       <table className=" w-full" >
       <thead>
           <tr className= "flex w-full   pr-4 pl-4 justify-between ">

@@ -3,12 +3,14 @@ import { ShoppingCart } from 'lucide-react'
 import { Footer } from "@/components/Footer";
 import { productsData } from "@/constants";
 import { useCart } from '@/hooks/useCart';
+import {  toast } from 'react-toastify';
 
 export default function Menu() {
   const {addProduct} = useCart()
   return (
  
     <main className="flex flex-col">
+    
       <div className="h-[800px] mt-[82px] mr-5 ml-5 flex flex-col items-center">
       <div>
         <ul className="flex gap-2">
@@ -48,7 +50,10 @@ export default function Menu() {
             </div>
            
             <button 
-            onClick={() => addProduct(Number(product.id))}
+            onClick={() => {addProduct(Number(product.id)); toast("Adicionado ao carrinho!", {
+              autoClose: 2000,
+              type: 'success'
+            })}}
             className="w-4/5 flex items-center justify-center gap-4 border m-2 border-white rounded-md">
             <ShoppingCart />
               Adicionar ao carrinho</button>

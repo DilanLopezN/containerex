@@ -21,8 +21,8 @@ export function Carrousel() {
   >
     
     {
-      carrouselImages.map((path) => (
-        <SwiperSlide> <Image src={path} alt=""  className='h-[420px]' /> </SwiperSlide>
+      carrouselImages.map((path, index) => (
+        <SwiperSlide key={index}> <Image src={path} alt=""  className='h-[420px]' /> </SwiperSlide>
       ) )
     }
 
